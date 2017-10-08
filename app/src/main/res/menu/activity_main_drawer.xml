@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single"
+        >
+        <item
+            android:id="@+id/nav_period_day"
+            android:icon="@drawable/ic_calendar_day_128"
+            android:title="@string/period_day"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_period_week"
+            android:icon="@drawable/ic_calendar_week_128"
+            android:title="@string/period_week" />
+        <item
+            android:id="@+id/nav_period_month"
+            android:icon="@drawable/ic_calendar_month_128"
+            android:title="@string/period_month" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

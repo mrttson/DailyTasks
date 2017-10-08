@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/taskItemWrapper"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="4dp"
+    >
+
+    <LinearLayout
+
+        android:layout_width="48dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_edit_profile"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_edit_profile"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/taskInfoWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/vline_width"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_task_info_wrapper">
+
+        <Button
+            android:id="@+id/btnGotoTaskDetails"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="4dp"
+            android:background="@drawable/bg_btn_goto_details"/>
+
+        <RelativeLayout
+            android:id="@+id/taskSummanry"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@+id/btnGotoTaskDetails">
+
+            <RelativeLayout
+                android:id="@+id/taskTitleWrapper"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal">
+                <com.f2m.dailytasks.customize.TextViewCapFirstLetter
+                    android:id="@+id/edtTaskTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="20sp"
+                    android:layout_toLeftOf="@+id/imgvTaskIcon"
+                    android:text="Công việc Công việc Công việc Công việc"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:padding="8dp"/>
+
+                <ImageView
+                    android:id="@+id/imgvTaskIcon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_edit_profile"/>
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/taskDetails"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/taskTitleWrapper"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="2dp"
+                android:paddingLeft="16dp"
+                android:text="Đây là một công việc rất cmn nó khó khăn và gian khổ Đây là một công việc rất cmn nó khó khăn và gian khổĐây là một công việc rất cmn nó khó khăn và gian khổĐây là một công việc rất cmn nó khó khăn và gian khổĐây là một công việc rất cmn nó khó khăn và gian khổ"
+                android:ellipsize="end"
+                android:maxLines="2"/>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vLine"
+        android:layout_width="@dimen/vline_width"
+        android:layout_height="match_parent"
+        android:background="#6dab2e"
+        android:layout_alignParentLeft="true"/>
+</RelativeLayout>

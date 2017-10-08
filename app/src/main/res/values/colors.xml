@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e89c05</color>
+    <color name="colorPrimaryDark">#d8870d</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="item_task_text_color">#6c6c6c</color>
+    <color name="item_task_text_color_selected">#ffffff</color>
+    <color name="active_color">#107896</color>
+    <color name="disabled_color">#d7d7d7</color>
+    <color name="checkbox_tint_color">#a6d785</color>
+</resources>
