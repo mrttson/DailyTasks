@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -102,8 +103,8 @@ public class DailyTasksActivity extends BaseActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabAddTask);
-        fab.setOnClickListener(this);
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabAddTask);
+//        fab.setOnClickListener(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.setScrimColor(Color.TRANSPARENT);
@@ -150,8 +151,7 @@ public class DailyTasksActivity extends BaseActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_daily_task, menu);
+        getMenuInflater().inflate(R.menu.menu_daily_task, menu);
         return true;
     }
 
@@ -163,7 +163,8 @@ public class DailyTasksActivity extends BaseActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.menu_AddTask) {
+            startActivity(new Intent(this, NewTaskActivity.class));
             return true;
         }
 
@@ -197,9 +198,9 @@ public class DailyTasksActivity extends BaseActivity
     public void onClick(View v) {
         int id = v.getId();
         switch (id) {
-            case R.id.fabAddTask:
-                startActivity(new Intent(this, NewTaskActivity.class));
-                break;
+//            case R.id.fabAddTask:
+//                startActivity(new Intent(this, NewTaskActivity.class));
+//                break;
 
             case R.id.imgvUserAvatar:
                 chooseAndCropAvatar();

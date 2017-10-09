@@ -37,6 +37,23 @@ public class EventTypeOptions {
         AllOptions.add(TYPE_CLEAN_UP);
     }
 
+    public static EventTypeOptions parse(String name) {
+        if (name.equals(TEXT_TYPE_DEFAULT))
+            return TYPE_DEFAULT;
+
+        if (name.equals(TEXT_TYPE_IMPORTANT))
+            return TYPE_IMPORTANT;
+
+        if (name.equals(TEXT_TYPE_BIRTHDAY))
+            return TYPE_BIRTHDAY;
+
+        if (name.equals(TEXT_TYPE_CLEAN_UP))
+            return TYPE_CLEAN_UP;
+
+        // cannot parse
+        return null;
+    }
+
     private String mTitle;
     private int mIcon = 0;
 
@@ -51,5 +68,10 @@ public class EventTypeOptions {
 
     public int getIcon() {
         return mIcon;
+    }
+
+    @Override
+    public String toString() {
+        return mTitle;
     }
 }

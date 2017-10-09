@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="80dp"
     android:id="@+id/taskItemWrapper"
     android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
+    android:layout_marginBottom="4dp"
     android:layout_marginRight="8dp"
     android:layout_marginLeft="4dp"
     >
@@ -39,16 +39,32 @@
         android:layout_alignParentEnd="true"
         android:background="@drawable/bg_task_info_wrapper">
 
-        <Button
+        <!--<Button-->
+            <!--android:id="@+id/btnGotoTaskDetails"-->
+            <!--android:layout_width="48dp"-->
+            <!--android:layout_height="48dp"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:padding="4dp"-->
+            <!--android:background="@drawable/bg_btn_goto_details"/>-->
+        <LinearLayout
             android:id="@+id/btnGotoTaskDetails"
             android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:padding="4dp"
-            android:background="@drawable/bg_btn_goto_details"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/taskSummanry"
@@ -60,7 +76,7 @@
             <RelativeLayout
                 android:id="@+id/taskTitleWrapper"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:orientation="horizontal">
                 <com.f2m.dailytasks.customize.TextViewCapFirstLetter
                     android:id="@+id/edtTaskTitle"

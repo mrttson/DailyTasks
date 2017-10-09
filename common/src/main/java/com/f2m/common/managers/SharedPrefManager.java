@@ -3,6 +3,7 @@ package com.f2m.common.managers;
 import android.content.Context;
 import android.content.SharedPreferences;
 import com.f2m.common.utils.CommonUltil;
+import com.f2m.common.utils.EncodeUtil;
 
 /**
  * Created by sev_user on 9/29/2017.
@@ -41,7 +42,7 @@ public class SharedPrefManager {
     public void putInt(String key, int value) {
         if (isEnableEncode) {
             String sValue = Integer.toString(value);
-            String encoded = CommonUltil.encodeBase64(sValue);
+            String encoded = EncodeUtil.encodeBase64(sValue);
             putEncodedString(key, encoded);
         } else {
             SharedPreferences.Editor editor = getSharedPrefEditor();
@@ -57,7 +58,7 @@ public class SharedPrefManager {
                 return defValue;
 
             try {
-                return Integer.parseInt(CommonUltil.encodeBase64(value));
+                return Integer.parseInt(EncodeUtil.encodeBase64(value));
             } catch (NumberFormatException e) {
                 e.printStackTrace();
                 return defValue;
@@ -69,7 +70,7 @@ public class SharedPrefManager {
 
     public void putString(String key, String value) {
         if (isEnableEncode) {
-            String encoded = CommonUltil.encodeBase64(value);
+            String encoded = EncodeUtil.encodeBase64(value);
             putEncodedString(key, encoded);
         } else {
             SharedPreferences.Editor editor = getSharedPrefEditor();
@@ -84,7 +85,7 @@ public class SharedPrefManager {
             return defValue;
 
         if (isEnableEncode)
-            return CommonUltil.decodeBase64(value);
+            return EncodeUtil.decodeBase64(value);
 
         return value;
     }
@@ -92,7 +93,7 @@ public class SharedPrefManager {
     public void putBoolean(String key, boolean value) {
         if(isEnableEncode) {
             String sValue = Boolean.toString(value);
-            String encoded = CommonUltil.encodeBase64(sValue);
+            String encoded = EncodeUtil.encodeBase64(sValue);
             putEncodedString(key, encoded);
         } else {
             SharedPreferences.Editor editor = getSharedPrefEditor();

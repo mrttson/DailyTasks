@@ -21,6 +21,23 @@ public class ReminderOptions {
     public static final ReminderOptions OPTION_BEFORE_1_HOUR = new ReminderOptions(TEXT_OPTION_BEFORE_1_HOUR);
     //public static final ReminderOptions OPTION_SPECIFY_TIME = new ReminderOptions(TEXT_OPTION_SPECIFY_TIME);
 
+    public static ReminderOptions parse(String text) {
+        if (text.equals(TEXT_OPTION_NO_REMIND))
+            return OPTION_NO_REMIND;
+
+        if(text.equals(TEXT_OPTION_ON_TIME))
+            return OPTION_ON_TIME;
+
+        if(text.equals(TEXT_OPTION_BEFORE_10_MINUTES))
+            return OPTION_BEFORE_10_MINUTES;
+
+        if(text.equals(TEXT_OPTION_BEFORE_1_HOUR))
+            return OPTION_BEFORE_1_HOUR;
+
+        //cannot parse
+        return null;
+    }
+
     public static final List<ReminderOptions> AllOptions;
     public static final List<ReminderOptions> DefaultOptions;
     static {
